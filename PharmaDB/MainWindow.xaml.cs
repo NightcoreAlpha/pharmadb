@@ -24,5 +24,10 @@ namespace PharmaDB
         {
             InitializeComponent();
         }
+
+        private void b1_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("it is work!1");
+        }
     }
 }

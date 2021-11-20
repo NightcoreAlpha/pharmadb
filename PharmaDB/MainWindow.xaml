@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="b1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="55,134,0,0" Click="b1_Click">Кнопка</Button>
     </Grid>
 </Window>
