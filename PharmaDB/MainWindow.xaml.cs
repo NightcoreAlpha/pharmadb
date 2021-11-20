@@ -27,7 +27,16 @@ namespace PharmaDB
 
         private void b1_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("it is work!1");
+            //MessageBox.Show("it is work!1");
+            using (App.PharmaContext db = new App.PharmaContext())
+            {
+                try
+                {
+                    var persons = from p in db.persons select p;
+                    datagrid1.ItemsSource = persons.ToList();
+                }
+                catch (Exception exp) { MessageBox.Show("Не робит: " + exp.Message, "Ошибка"); }
+            }
         }
     }
 }
