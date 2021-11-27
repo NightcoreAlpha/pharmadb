@@ -16,6 +16,7 @@ namespace PharmaDB
     {
         public class PharmaContext : DbContext
         {
+            public DbSet<Account> accounts { get; set; }
             public DbSet<Person> persons { get; set; }
             protected override void OnConfiguring(DbContextOptionsBuilder optionsbuilder)
             {
@@ -27,6 +28,11 @@ namespace PharmaDB
                 }
                 catch (Exception exp) { MessageBox.Show("Ошибка подключения: " + exp.Message, "Ошибка"); }
             }
+        }
+        public class Account
+        {
+            public int? id { get; set; }
+            public string name_account { get; set; }
         }
         public class Person
         {

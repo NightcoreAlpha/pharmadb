@@ -1,0 +1,13 @@
+﻿<Window x:Class="PharmaDB.AccountWIndow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PharmaDB"
+        mc:Ignorable="d" Height="250" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" WindowStyle="None" Background="#FFDEDEDE" MouseDown="Window_MouseDown">
+    <Grid>
+        <TextBox x:Name="namebox" Margin="45,72,45,125" FontSize="18" Height="33"/>
+        <Button x:Name="okbutton" Margin="40,170,300,47" Height="33" Width="150" Click="Button_Click_1">Принять</Button>
+        <Button x:Name="closebutton" Margin="300,170,40,47" Height="33" Width="150" Click="Button_Click">Отмена</Button>
+    </Grid>
+</Window>
