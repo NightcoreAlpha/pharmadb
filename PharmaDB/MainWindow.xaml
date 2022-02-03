@@ -45,59 +45,63 @@
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
-            <Grid x:Name="gridplace1" Margin="0,60,0,0" Width="auto" Height="auto" Background="White"/>
-
-
-
-            <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF183861" Margin="0,60,0,0">
-                <StackPanel>
-                    <Grid Height="90" Background="#FF183861">
-                        <Button x:Name="ButtonCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click">
-                            <materialDesign:PackIcon Foreground="White" Kind="ArrowLeft" Width="25" Height="25"/>
-                        </Button>
-                        <Button x:Name="ButtonOpenMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="ButtonOpenMenu_Click">
-                            <materialDesign:PackIcon Foreground="White" Kind="Menu" Width="25" Height="25"/>
-                        </Button>
-                    </Grid>
-                    <ListView x:Name="lw1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF1368BD" SelectionChanged="lw1_SelectionChanged">
-                        <ListViewItem Height="60" >
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="HomeAssistant" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                                <TextBlock Text="Главная" VerticalAlignment="Center" Margin="20 10"/>
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem Height="60" >
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Doctor" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                                <TextBlock Text="Участники" VerticalAlignment="Center" Margin="20 10"/>
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem Height="60" >
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="SelectionMultiple" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                                <TextBlock Text="Списки" VerticalAlignment="Center" Margin="20 10"/>
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem Height="60" >
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="ServiceToolbox" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                                <TextBlock Text="Услуги" VerticalAlignment="Center" Margin="20 10"/>
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem Height="60" >
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="MedicineOutline" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                                <TextBlock Text="Категории" VerticalAlignment="Center" Margin="20 10"/>
-                            </StackPanel>
-                        </ListViewItem>
-                    </ListView>
-                </StackPanel>
-
-                <DataGrid x:Name="datagrid1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="250" Background="LightSlateGray" Visibility="Collapsed">
-
-                </DataGrid>
-                <Button x:Name="b1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="549,39,0,0" Click="b1_Click">Кнопка</Button>
-            </Grid>
         </Grid>
+
+        <Grid x:Name="gridplace1" Margin="60,60,0,0" Width="auto" Height="auto" Background="White">
+
+            <DataGrid x:Name="datagrid1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="250" Background="LightSlateGray" Visibility="Visible"/>
+            <Button x:Name="b1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="592,115,0,0" Click="b1_Click">Кнопка</Button>
+
+        </Grid>
+
+        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF183861" Margin="0,60,0,0">
+
+            <StackPanel>
+                <Grid Height="90" Background="#FF183861">
+                    <Button x:Name="ButtonCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click">
+                        <materialDesign:PackIcon Foreground="White" Kind="ArrowLeft" Width="25" Height="25"/>
+                    </Button>
+                    <Button x:Name="ButtonOpenMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="ButtonOpenMenu_Click">
+                        <materialDesign:PackIcon Foreground="White" Kind="Menu" Width="25" Height="25"/>
+                    </Button>
+                </Grid>
+                <ListView x:Name="lw1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF1368BD" SelectionChanged="lw1_SelectionChanged">
+                    <ListViewItem Height="60" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="HomeAssistant" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Главная" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Doctor" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Участники" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="SelectionMultiple" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Списки" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ServiceToolbox" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Услуги" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="MedicineOutline" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Категории" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+
+        </Grid>
+
     </Grid>
 </Window>
+<!--<DataGrid x:Name="datagrid1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="250" Background="LightSlateGray" Visibility="Collapsed"/>
+    <Button x:Name="b1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="730,285,0,0" Click="b1_Click">Кнопка</Button>-->

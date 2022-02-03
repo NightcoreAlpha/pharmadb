@@ -22,13 +22,14 @@ namespace PharmaDB
     {
         public static string MainAccountName { get; set; }
         App.PharmaContext db = new App.PharmaContext();
-        List<App.Person> persons;
+        public List<App.Person> persons;
         public MainWindow()
         {
             InitializeComponent();
-            accountbox.Text = db.accounts.Where(x => x.id == 1).FirstOrDefault().name_account;
+            persons = null;
             persons = (from p in db.persons select p).ToList();
-            MainAccountName = accountbox.Text;
+            /*accountbox.Text = db.accounts.Where(x => x.id == 1).FirstOrDefault().name_account;
+            MainAccountName = accountbox.Text;*/
         }
 
         private void b1_Click(object sender, RoutedEventArgs e)
@@ -38,7 +39,7 @@ namespace PharmaDB
             //{
                 try
                 {
-                    //var persons = from p in db.persons select p;
+                    var persons = from p in db.persons select p;
                     datagrid1.ItemsSource = persons.ToList();
                 }
                 catch (Exception exp) { MessageBox.Show("Не робит: " + exp.Message, "Ошибка"); }
