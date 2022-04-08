@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="PharmaDB.UserControl2_persons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PharmaDB"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="1020" Foreground="Black">
+    <Grid x:Name="personList" Background="White">
+        <DataGrid Margin="10,10,700,10" Background="LightGray" x:Name="usergrid1" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="usergrid1_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding name}" Header="Имя"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding familia}" Header="Фамилия"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding otchestvo}" Header="Отчество"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid x:Name="fieldGrid">
+            <Button x:Name="addPersonalButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="335,490,0,0" Height="40" FontSize="20" Click="addPersonalButton_Click">Добавить</Button>
+            <Button x:Name="uploadPersonalButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="535,490,0,0" Height="40" FontSize="20" Click="uploadPersonalButton_Click">Изменить</Button>
+            <Button x:Name="editPersonalButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="535,440,0,0" Height="40" FontSize="20" Click="editPersonalButton_Click" Visibility="Hidden">Принять</Button>
+            <Button x:Name="delPersonalButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="735,490,0,0" Height="40" FontSize="20" Click="delPersonalButton_Click">Удалить</Button>
+            <Label Content="Имя" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="405,35,0,0" FontSize="15"/>
+            <TextBox x:Name="nameBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="447,37,0,0" IsReadOnly="{Binding isReadField, Mode=Default}"/>
+            <Label Content="Фамилия" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,110,0,0" FontSize="15"/>
+            <TextBox x:Name="famBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="447,110,0,0" IsReadOnly="{Binding isReadField}"/>
+            <Label Content="Отчество" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,185,0,0" FontSize="15"/>
+            <TextBox x:Name="otchBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="447,185,0,0" IsReadOnly="{Binding isReadField, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <Label Content="Пол" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="407,0,0,0" FontSize="15"/>
+            <ComboBox x:Name="genderBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="449,255,0,0" ItemsSource="{Binding genderList}" IsEnabled="{Binding isEnabledField}"/>
+            <Label Content="Специализация" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="327,325,0,0" FontSize="15"/>
+            <ComboBox x:Name="specialBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="445,325,0,0" ItemsSource="{Binding specializationList}" IsEnabled="{Binding isEnabledField}"/>
+            <Label Content="Работает с" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="687,29,0,0" FontSize="15"/>
+            <DatePicker x:Name="dateinBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="771,30,0,0" IsEnabled="{Binding isEnabledField}"/>
+            <Label Content="до" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="881,29,0,0" FontSize="15"/>
+            <DatePicker x:Name="dateendBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="911,30,0,0" IsEnabled="{Binding isEnabledField}"/>
+            <Label Content="Опыт" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="720,111,0,0" FontSize="15"/>
+            <TextBox x:Name="expBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="771,111,0,0" PreviewTextInput="expBox_PreviewTextInput" IsReadOnly="{Binding isReadField}"/>
+            <Label Content="Телефон" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="700,185,0,0" FontSize="15"/>
+            <TextBox x:Name="telBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="771,185,0,0" IsReadOnly="{Binding isReadField}" PreviewTextInput="telBox_PreviewTextInput"/>
+            <Label Content="Оклад" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="715,0,0,0" FontSize="15"/>
+            <TextBox x:Name="salaryBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="771,255,0,0" PreviewTextInput="salaryBox_PreviewTextInput" IsReadOnly="{Binding isReadField}"/>
+            <Label Content="Табельный №" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="661,325,0,0" FontSize="15"/>
+            <TextBox x:Name="numbBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="768,325,0,0" IsReadOnly="{Binding isReadField}"/>
+        </Grid>
+    </Grid>
+</UserControl>

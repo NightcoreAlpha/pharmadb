@@ -75,7 +75,7 @@
                     <ListViewItem Height="60" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Doctor" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Участники" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Сотрудники" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60" >
@@ -92,8 +92,8 @@
                     </ListViewItem>
                     <ListViewItem Height="60" >
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="MedicineOutline" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Категории" VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="Information" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Информация" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
