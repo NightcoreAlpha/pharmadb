@@ -18,6 +18,7 @@ namespace PharmaDB
         {
             public DbSet<Account> accounts { get; set; }
             public DbSet<Person> persons { get; set; }
+            public DbSet<Specialization> specializations { get; set; }
             protected override void OnConfiguring(DbContextOptionsBuilder optionsbuilder)
             {
                 var Username = "postgres";
@@ -27,6 +28,35 @@ namespace PharmaDB
                     optionsbuilder.UseNpgsql("Server=localhost;Port=5432;Username=" + Username + ";Password=" + Userpassword + ";Database=pharmadb;");
                 }
                 catch (Exception exp) { MessageBox.Show("Ошибка подключения: " + exp.Message, "Ошибка"); }
+            }
+        }
+        public static class GenerateId
+        {
+            public static int getPersonId(PharmaContext context)
+            {
+                int id = 0;
+                var allPersons = from p in context.persons.ToList()
+                                 select new
+                                 {
+                                     id = p.id
+                                 };
+                var idPersons = allPersons.ToList();
+                if (idPersons.Count > 0)
+                {
+                    for (int i = 0; i < idPersons.Count - 1; i++)
+                    {
+                        id = idPersons[i].id;
+                        if (idPersons[i + 1].id != id + 1)
+                        {
+                            return id + 1;
+                        }
+                    }
+                    return id += 2;
+                }
+                else
+                {
+                    return 1;
+                }
             }
         }
         public class Account
@@ -48,6 +78,12 @@ namespace PharmaDB
             public string telefon { get; set; }
             public double salary { get; set; }
             public int? tab_number { get; set; }
+        }
+        public class Specialization
+        {
+            public int id { get; set; }
+            public string title { get; set; }
+            public string description { get; set; }
         }
     }
 }

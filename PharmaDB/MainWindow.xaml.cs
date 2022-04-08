@@ -37,12 +37,12 @@ namespace PharmaDB
             //MessageBox.Show("it is work!1");
             //using (App.PharmaContext db = new App.PharmaContext())
             //{
-                try
-                {
-                    var persons = from p in db.persons select p;
-                    datagrid1.ItemsSource = persons.ToList();
-                }
-                catch (Exception exp) { MessageBox.Show("Не робит: " + exp.Message, "Ошибка"); }
+            try
+            {
+                var persons = from p in db.persons select p;
+                datagrid1.ItemsSource = persons.ToList();
+            }
+            catch (Exception exp) { MessageBox.Show("Не робит: " + exp.Message, "Ошибка"); }
             //}
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -79,7 +79,7 @@ namespace PharmaDB
         {
             int index = lw1.SelectedIndex;
             //MoveCursorMenu(index);
-            /*switch (index)
+            switch (index)
             {
                 case 0:
                     gridplace1.Children.Clear();
@@ -87,9 +87,9 @@ namespace PharmaDB
                     break;
                 case 1:
                     gridplace1.Children.Clear();
-                    gridplace1.Children.Add(new UserControlMembers());
+                    gridplace1.Children.Add(new UserControl2_persons());
                     break;
-                case 2:
+                /*case 2:
                     gridplace1.Children.Clear();
                     gridplace1.Children.Add(new UserControlLists());
                     break;
@@ -100,10 +100,10 @@ namespace PharmaDB
                 case 4:
                     gridplace1.Children.Clear();
                     gridplace1.Children.Add(new CategoryControl());
-                    break;
+                    break;*/
                 default:
                     break;
-            }*/
+            }
         }
         public void cb(object sender, RoutedEventArgs e)
         {
@@ -119,5 +119,6 @@ namespace PharmaDB
             Application.Current.Shutdown();
         }
         public string goname { get; set; }
+
     }
 }

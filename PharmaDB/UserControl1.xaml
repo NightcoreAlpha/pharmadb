@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:PharmaDB"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid Background="White">
+        <DataGrid x:Name="datagrid1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="250" Background="LightSlateGray" Visibility="Visible"/>
+        <Button x:Name="b1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="592,115,0,0" Content="Кнопка" Cursor="Hand"/>
+
     </Grid>
 </UserControl>

@@ -109,6 +109,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -155,10 +156,21 @@
     <Compile Include="AccountWIndow.xaml.cs">
       <DependentUpon>AccountWIndow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="addPersonControl.xaml.cs">
+      <DependentUpon>addPersonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSourseClass.cs" />
     <Compile Include="UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControl2_persons.xaml.cs">
+      <DependentUpon>UserControl2_persons.xaml</DependentUpon>
+    </Compile>
     <Page Include="AccountWIndow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="addPersonControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,6 +187,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl2_persons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
