@@ -26,25 +26,11 @@ namespace PharmaDB
         public MainWindow()
         {
             InitializeComponent();
-            persons = null;
-            persons = (from p in db.persons select p).ToList();
-            /*accountbox.Text = db.accounts.Where(x => x.id == 1).FirstOrDefault().name_account;
-            MainAccountName = accountbox.Text;*/
+            gridplace1.Children.Clear();
+            gridplace1.Children.Add(new MainControl());
+            /*accountbox.Text = db.accounts.Where(x => x.id == 1).FirstOrDefault().name_account;*/
         }
 
-        private void b1_Click(object sender, RoutedEventArgs e)
-        {
-            //MessageBox.Show("it is work!1");
-            //using (App.PharmaContext db = new App.PharmaContext())
-            //{
-            try
-            {
-                var persons = from p in db.persons select p;
-                datagrid1.ItemsSource = persons.ToList();
-            }
-            catch (Exception exp) { MessageBox.Show("Не робит: " + exp.Message, "Ошибка"); }
-            //}
-        }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
@@ -83,7 +69,7 @@ namespace PharmaDB
             {
                 case 0:
                     gridplace1.Children.Clear();
-                    gridplace1.Children.Add(new UserControl1());
+                    gridplace1.Children.Add(new MainControl());
                     break;
                 case 1:
                     gridplace1.Children.Clear();

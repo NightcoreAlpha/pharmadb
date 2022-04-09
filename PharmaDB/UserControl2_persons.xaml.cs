@@ -72,7 +72,9 @@ namespace PharmaDB
             if (uploadPersonalButton.Content.ToString() == "Отмена")
             {
                 uploadPersonalButton.Content = "Изменить";
+                editPersonalButton.Visibility = Visibility.Hidden;
             }
+
             setEditingFieldDisable();
             setFieldData();
         }

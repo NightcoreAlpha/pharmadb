@@ -19,6 +19,7 @@ namespace PharmaDB
             public DbSet<Account> accounts { get; set; }
             public DbSet<Person> persons { get; set; }
             public DbSet<Specialization> specializations { get; set; }
+            public DbSet<MedSquad> med_squad { get; set; }
             protected override void OnConfiguring(DbContextOptionsBuilder optionsbuilder)
             {
                 var Username = "postgres";
@@ -84,6 +85,13 @@ namespace PharmaDB
             public int id { get; set; }
             public string title { get; set; }
             public string description { get; set; }
+        }
+        public class MedSquad
+        {
+            public int id { get; set; }
+            public string title { get; set; }
+            public string comment { get; set; }
+            public int id_pol { get; set; }
         }
     }
 }

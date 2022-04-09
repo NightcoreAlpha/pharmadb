@@ -12,17 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static PharmaDB.App;
 
 namespace PharmaDB
 {
     /// <summary>
     /// Логика взаимодействия для UserControl1.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class MainControl : UserControl
     {
-        public UserControl1()
+        PharmaContext db = new App.PharmaContext();
+        public MainControl()
         {
             InitializeComponent();
+            //using (var db = new PharmaContext())
+            //{
+                personalCountBox.Text = db.persons.Count().ToString();
+                squadCountBox.Text = db.med_squad.Count().ToString();
+            //}
         }
     }
 }
