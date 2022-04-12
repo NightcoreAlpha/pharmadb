@@ -75,11 +75,11 @@ namespace PharmaDB
                     gridplace1.Children.Clear();
                     gridplace1.Children.Add(new UserControl2_persons());
                     break;
-                /*case 2:
+                case 2:
                     gridplace1.Children.Clear();
                     gridplace1.Children.Add(new UserControlLists());
                     break;
-                case 3:
+                /*case 3:
                     gridplace1.Children.Clear();
                     gridplace1.Children.Add(new UserControlService());
                     break;

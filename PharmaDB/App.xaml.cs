@@ -20,6 +20,8 @@ namespace PharmaDB
             public DbSet<Person> persons { get; set; }
             public DbSet<Specialization> specializations { get; set; }
             public DbSet<MedSquad> med_squad { get; set; }
+            public DbSet<Polyclinics> polyclinics { get; set; }
+            public DbSet<AddToBrigade> add_to_brigade { get; set; }
             protected override void OnConfiguring(DbContextOptionsBuilder optionsbuilder)
             {
                 var Username = "postgres";
@@ -59,6 +61,36 @@ namespace PharmaDB
                     return 1;
                 }
             }
+            public static int getAddBrigadeId(PharmaContext context)
+            {
+                int id = 1;
+                List<int> idBrigade = new List<int>();
+                var allBrigades = from p in context.add_to_brigade.ToList()
+                                  select new
+                                  {
+                                      p.id
+                                  };
+                foreach (var brigade in allBrigades)
+                {
+                    idBrigade.Add(brigade.id);
+                }
+                if (idBrigade.Count > 0)
+                {
+                    while (id < 1000)
+                    {
+                        if (idBrigade.Contains(id))
+                        {
+                            id++;
+                        }
+                        else
+                        {
+                            return id;
+                        }
+                    }
+                }
+                else return 1;
+                return 1;
+            }
         }
         public class Account
         {
@@ -92,6 +124,22 @@ namespace PharmaDB
             public string title { get; set; }
             public string comment { get; set; }
             public int id_pol { get; set; }
+
+        }
+        public class Polyclinics
+        {
+            public int id { get; set; }
+            public string title { get; set; }
+            public string short_title { get; set; }
+            public string address { get; set; }
+            public int? id_tel { get; set; }
+        }
+        public class AddToBrigade
+        {
+            public int id { get; set; }
+            public int id_person { get; set; }
+            public int id_brigade { get; set; }
+
         }
     }
 }

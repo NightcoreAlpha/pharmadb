@@ -16,6 +16,7 @@ namespace PharmaDB
             public bool isReadField { get; set; }
             public bool isEnabledField { get; set; }
             public List<Specialization> specializationList { get; set; }
+            public List<Polyclinics> medSquad { get; set; }
             public ComboboxData()
             {
                 genderList = new string[] { "Муж", "Жен" };
@@ -24,6 +25,7 @@ namespace PharmaDB
                 using (var db = new App.PharmaContext())
                 {
                     specializationList = db.specializations.ToList();
+                    medSquad = db.polyclinics.ToList();
                 }
             }
         }

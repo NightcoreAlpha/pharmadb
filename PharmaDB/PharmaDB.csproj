@@ -156,6 +156,9 @@
     <Compile Include="AccountWIndow.xaml.cs">
       <DependentUpon>AccountWIndow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddBrigade.xaml.cs">
+      <DependentUpon>AddBrigade.xaml</DependentUpon>
+    </Compile>
     <Compile Include="addPersonControl.xaml.cs">
       <DependentUpon>addPersonControl.xaml</DependentUpon>
     </Compile>
@@ -166,7 +169,14 @@
     <Compile Include="UserControl2_persons.xaml.cs">
       <DependentUpon>UserControl2_persons.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlLists.xaml.cs">
+      <DependentUpon>UserControlLists.xaml</DependentUpon>
+    </Compile>
     <Page Include="AccountWIndow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddBrigade.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControl2_persons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlLists.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
