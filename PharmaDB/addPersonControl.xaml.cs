@@ -36,7 +36,6 @@ namespace PharmaDB
 
                 foreach (var special in specials)
                 {
-                    //specialBox.Items.Add(special.title);
                     /*specialBox.Items.Add(new App.Specialization()
                     {
                         id = special.id,
