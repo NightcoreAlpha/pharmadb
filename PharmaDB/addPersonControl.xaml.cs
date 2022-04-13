@@ -32,16 +32,8 @@ namespace PharmaDB
             using (var db = new App.PharmaContext())
             {
                 var specials = db.specializations.ToList();
-                //specialBox.Items.Add(specials);
-
                 foreach (var special in specials)
                 {
-                    /*specialBox.Items.Add(new App.Specialization()
-                    {
-                        id = special.id,
-                        title = special.title,
-                        description = special.description
-                    }.title);*/
                     specializations.Add(
                         new App.Specialization()
                         {
@@ -53,7 +45,6 @@ namespace PharmaDB
                 }
                 specialBox.ItemsSource = specializations;
                 specialBox.DisplayMemberPath = "title";
-                //specialBox.SelectedValue = "id";
             }
         }
 
@@ -62,11 +53,8 @@ namespace PharmaDB
             using (var db = new App.PharmaContext())
             {
                 var specials = db.specializations.ToList();
-                //specialBox.Items.Add(specials);
-
                 foreach (var special in specials)
                 {
-                    //specialBox.Items.Add(special.title);
                     specialBox.Items.Add(new App.Specialization()
                     {
                         id = special.id,
@@ -74,8 +62,6 @@ namespace PharmaDB
                         description = special.description
                     }.title);
                 }
-                var mess = "";
-
             }
             return specializations;
         }
@@ -96,20 +82,8 @@ namespace PharmaDB
         {
             using (var db = new App.PharmaContext())
             {
-                //var sp = new GenerateId();
-
                 int ids = GenerateId.getPersonId(db);
-                //var spec = db.specializations.Where(x => x.title == specialBox.SelectedItem.ToString()).FirstOrDefault();
                 var spec = specialBox.SelectedItem as App.Specialization;
-                /*DateTime? dateEnd = null;
-                if (dateendBox.SelectedDate.HasValue == true)
-                {
-                    dateEnd = dateendBox.SelectedDate.Value;
-                }
-                else
-                {
-                    dateEnd = null;
-                }*/
                 var newPerson = new App.Person
                 {
                     id = ids,
@@ -129,7 +103,6 @@ namespace PharmaDB
                 db.SaveChanges();
                 personGrid.Children.Clear();
                 personGrid.Children.Add(new UserControl2_persons());
-
             }
         }
 

@@ -28,7 +28,6 @@ namespace PharmaDB
             InitializeComponent();
             gridplace1.Children.Clear();
             gridplace1.Children.Add(new MainControl());
-            /*accountbox.Text = db.accounts.Where(x => x.id == 1).FirstOrDefault().name_account;*/
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -36,11 +35,7 @@ namespace PharmaDB
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            //datagrid1.Children.Clear();
-            //datagrid1.Children.Add(new UserControl1());
-        }
+
         private void Window_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             /*if (WindowState == WindowState.Normal)
@@ -64,7 +59,6 @@ namespace PharmaDB
         private void lw1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = lw1.SelectedIndex;
-            //MoveCursorMenu(index);
             switch (index)
             {
                 case 0:

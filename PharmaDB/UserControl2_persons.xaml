@@ -53,7 +53,8 @@
             <Label Content="Опыт" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="720,111,0,0" FontSize="15"/>
             <TextBox x:Name="expBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="771,111,0,0" PreviewTextInput="expBox_PreviewTextInput" IsReadOnly="{Binding isReadField}"/>
             <Label Content="Телефон" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="700,185,0,0" FontSize="15"/>
-            <TextBox x:Name="telBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="771,185,0,0" IsReadOnly="{Binding isReadField}" PreviewTextInput="telBox_PreviewTextInput"/>
+            <TextBox x:Name="telBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="771,185,0,0" IsReadOnly="{Binding isReadField}" ToolTip="Введите номер в формате x(xxx)xxxxxxx" PreviewTextInput="telBox_PreviewTextInput"/>
+            
             <Label Content="Оклад" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="715,0,0,0" FontSize="15"/>
             <TextBox x:Name="salaryBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="771,255,0,0" PreviewTextInput="salaryBox_PreviewTextInput" IsReadOnly="{Binding isReadField}"/>
             <Label Content="Табельный №" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="661,325,0,0" FontSize="15"/>

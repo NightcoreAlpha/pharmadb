@@ -37,29 +37,33 @@ namespace PharmaDB
         {
             public static int getPersonId(PharmaContext context)
             {
-                int id = 0;
+                int id = 1;
+                List<int> idPerson = new List<int>();
                 var allPersons = from p in context.persons.ToList()
                                  select new
                                  {
                                      id = p.id
                                  };
-                var idPersons = allPersons.ToList();
-                if (idPersons.Count > 0)
+                foreach (var person in allPersons)
                 {
-                    for (int i = 0; i < idPersons.Count - 1; i++)
+                    idPerson.Add(person.id);
+                }
+                if (idPerson.Count > 0)
+                {
+                    while (id < 1000)
                     {
-                        id = idPersons[i].id;
-                        if (idPersons[i + 1].id != id + 1)
+                        if (idPerson.Contains(id))
                         {
-                            return id + 1;
+                            id++;
+                        }
+                        else
+                        {
+                            return id;
                         }
                     }
-                    return id += 2;
                 }
-                else
-                {
-                    return 1;
-                }
+                else return 1;
+                return 1;
             }
             public static int getAddBrigadeId(PharmaContext context)
             {
