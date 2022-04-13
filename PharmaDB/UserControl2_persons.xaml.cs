@@ -180,7 +180,7 @@ namespace PharmaDB
                 if (data != null)
                 {
                     int index = 0;
-                    index = usergrid1.Items.Count - 1;
+                    index = usergrid1.SelectedIndex;
                     var spec = (Specialization)specialBox.SelectedItem;
                     var person = db.persons.Where(x => x.id == data.id).FirstOrDefault();
 

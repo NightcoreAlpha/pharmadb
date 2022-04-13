@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PharmaDB"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White" MouseDown="Window_MouseDown" Loaded="Window_Loaded" MouseDoubleClick="Window_MouseDoubleClick"
+        mc:Ignorable="d" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White" MouseDown="Window_MouseDown" MouseDoubleClick="Window_MouseDoubleClick"
         Title="MainWindow">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
@@ -32,7 +32,7 @@
 
     <Grid Background="LightGray">
         <Grid Height="60" VerticalAlignment="Top" Background="#FF1368BD">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"><Run Language="ru-ru" Text="Наименование организации"/></TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"><Run Language="ru-ru" Text="Скорая помощь"/></TextBlock>
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock x:Name="accountbox" VerticalAlignment="Center" FontSize="18"><Run Language="ru-ru" Text=""/></TextBlock>
                 <materialDesign:PopupBox Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">

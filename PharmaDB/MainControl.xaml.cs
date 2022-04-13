@@ -25,11 +25,8 @@ namespace PharmaDB
         public MainControl()
         {
             InitializeComponent();
-            //using (var db = new PharmaContext())
-            //{
-                personalCountBox.Text = db.persons.Count().ToString();
-                squadCountBox.Text = db.med_squad.Count().ToString();
-            //}
+            personalCountBox.Text = db.persons.Count().ToString();
+            squadCountBox.Text = db.med_squad.Count().ToString();
         }
     }
 }
